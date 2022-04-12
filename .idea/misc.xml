@@ -40,6 +40,19 @@
         <entry key="..\:/Users/luigi/Desktop/PS-Dev/PetappM/app/src/main/res/layout/newuser_layout.xml" value="0.2747053490480508" />
         <entry key="..\:/Users/luigi/Desktop/PS-Dev/PetappM/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1505" />
         <entry key="..\:/Users/luigi/Desktop/PS-Dev/PetappM/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1345" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1255" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/activity_dashboard.xml" value="0.15433946130825138" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/activity_employee_detail.xml" value="0.1778537836682343" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/activity_employee_list.xml" value="0.1778537836682343" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/activity_intro.xml" value="0.17400598546387344" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/activity_login.xml" value="0.15433946130825138" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/content_main.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/employee_list.xml" value="0.1778537836682343" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/layout/employee_list_content.xml" value="0.1778537836682343" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/menu/menu_main.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1255" />
+        <entry key="..\:/Users/luigi/Desktop/PS-Dev/petappfe/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1255" />
       </map>
     </option>
   </component>

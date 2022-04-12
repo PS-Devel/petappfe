@@ -1,6 +1,3 @@
 <resources>
-    <!--dimes for design 3-->
-
-
-
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

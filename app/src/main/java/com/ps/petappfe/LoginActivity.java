@@ -1,27 +1,77 @@
 package com.ps.petappfe;
 
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
 
-public class LoginActivity extends Fragment {
 
 
-    public LoginActivity() {
-        // Required empty public constructor
-    }
 
+public class LoginActivity extends AppCompatActivity {
+/*
+    private EditText etUsername, etPassword;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_login, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        etUsername = findViewById(R.id.etUserName);
+        etPassword = findViewById(R.id.etPassword);
+
+        findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginUser();
+            }
+        });
     }
+
+    private void loginUser() {
+        final String userName = etUsername.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+
+        if (userName.isEmpty()) {
+            etUsername.setError("Username is required");
+            etUsername.requestFocus();
+            return;
+        } else if (password.isEmpty()) {
+            etPassword.setError("Password is required");
+            etPassword.requestFocus();
+            return;
+        }
+
+        Call<ResponseBody> call = Client
+                .getInstance()
+                .getAPI()
+                .checkUser(new User(userName, password));
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                String s = "";
+                try {
+                    s = response.body().string();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                if (s.equals(userName)) {
+                    Toast.makeText(LoginActivity.this, "User logged in!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(LoginActivity.this, DashboardActivity.class).putExtra("username", userName));
+                } else {
+                    Toast.makeText(LoginActivity.this, "Incorrect Credentials! Try again!", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+    */
 
 }

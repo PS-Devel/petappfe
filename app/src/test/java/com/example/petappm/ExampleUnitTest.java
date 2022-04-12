@@ -1,4 +1,4 @@
-package com.example.petappm;
+package com.ps.petappm;
 
 import org.junit.Test;
 
