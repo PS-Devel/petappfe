@@ -166,7 +166,7 @@
                         android:fontFamily="@font/roboto_regular"
                         />
 
-                    <ImageView
+v                    <ImageView
                         android:id="@+id/bus1"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
