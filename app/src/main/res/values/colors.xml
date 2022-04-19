@@ -19,5 +19,13 @@
     <color name="whiteTextColor">#fff</color>
     <color name="primaryTextColor">#00a5ff</color>
     <color name="loginBkColor">#f0f0f0</color>
+
+    <color name="green_200">#55cf86</color>
+    <color name="green_500">#0f9d58</color>
+    <color name="green_700">#006d2d</color>
+
+    <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
+
+
 </resources>

@@ -5,4 +5,26 @@
     <string name="redirect_create_text">Nuovo utente?</string>
 
 
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Clicka qui per accedere</string>
+    <string name="login_signup_hint">Clicka qui se non sei registrato</string>
+
+
+
+    <string name="btn_l">Login</string>
+    <string name="hello_blank_fragment">Hello</string>
+    <string name="your_name">Username</string>
+    <string name="login_form_title">Login</string>
+    <string name="login_form_username">Username</string>
+    <string name="login_form_password">Password</string>
+    <string name="login_form_login">LOGIN</string>
+    <string name="swipe_left_for_register">Scorri per accedere alla pagina di registrazione</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="tag">Inserisci username e password per accedere</string>
+    <string name="swipe_right_for_login">Scorri per accedere alla pagina di login</string>
+    <string name="register">Registrazione</string>
+    <string name="re_type_password">Ripeti Password</string>
 </resources>

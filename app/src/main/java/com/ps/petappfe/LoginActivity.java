@@ -2,76 +2,118 @@ package com.ps.petappfe;
 
 
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.ps.petappfe.Util.ApiClient;
+import com.ps.petappfe.Util.LoginRequest;
+import com.ps.petappfe.Util.LoginResponse;
 
-
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class LoginActivity extends AppCompatActivity {
-/*
-    private EditText etUsername, etPassword;
+    TextView username, password;
+    Button btnLogin;
 
+
+    Animation topAnim, bottomAnim;
+
+    ImageView image;
+    TextView logo;
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //textView = findViewById(R.id.text_view);
+        // FULL SCREEN
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
+                , WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        etUsername = findViewById(R.id.etUserName);
-        etPassword = findViewById(R.id.etPassword);
 
-        findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
+
+
+
+        image=  (ImageView) findViewById(R.id.imageView2);
+        logo=  (TextView) findViewById(R.id.textView);
+
+
+
+
+        username = findViewById(R.id.edUsername);
+        password = findViewById(R.id.edPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginUser();
-            }
-        });
-    }
 
-    private void loginUser() {
-        final String userName = etUsername.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
-
-        if (userName.isEmpty()) {
-            etUsername.setError("Username is required");
-            etUsername.requestFocus();
-            return;
-        } else if (password.isEmpty()) {
-            etPassword.setError("Password is required");
-            etPassword.requestFocus();
-            return;
-        }
-
-        Call<ResponseBody> call = Client
-                .getInstance()
-                .getAPI()
-                .checkUser(new User(userName, password));
-
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                String s = "";
-                try {
-                    s = response.body().string();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                if (s.equals(userName)) {
-                    Toast.makeText(LoginActivity.this, "User logged in!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(LoginActivity.this, DashboardActivity.class).putExtra("username", userName));
+                if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
+                    Toast.makeText(LoginActivity.this, "Username e password obbligatori!", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(LoginActivity.this, "Incorrect Credentials! Try again!", Toast.LENGTH_LONG).show();
+                    login();
                 }
+
+            }
+        });
+    }
+
+    public void login() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUsername(username.getText().toString());
+        loginRequest.setPassword(password.getText().toString());
+
+        Call<LoginResponse> loginResponseCall = ApiClient.getUserService().userLogin(loginRequest);
+        loginResponseCall.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
+                if (response.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Accesso completato!", Toast.LENGTH_LONG).show();
+                    LoginResponse loginResponse = response.body();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class).putExtra("data", loginResponse.getUsername()));
+                        }
+                    }, 700);
+
+                } else {
+                    Toast.makeText(LoginActivity.this, "Accesso non riuscito!", Toast.LENGTH_LONG).show();
+                }
+
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "Throwable " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+
             }
         });
-
     }
-    */
+
 
 }
