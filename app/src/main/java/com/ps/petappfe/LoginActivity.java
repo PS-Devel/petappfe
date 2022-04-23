@@ -1,7 +1,6 @@
 package com.ps.petappfe;
 
 
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
 
     ImageView image;
     TextView logo;
+    TextView toCreate;
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -53,18 +54,25 @@ public class LoginActivity extends AppCompatActivity {
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
 
-
-        image=  (ImageView) findViewById(R.id.imageView2);
-        logo=  (TextView) findViewById(R.id.textView);
-
-
+        image = (ImageView) findViewById(R.id.imageView2);
+        logo = (TextView) findViewById(R.id.textView);
 
 
         username = findViewById(R.id.edUsername);
         password = findViewById(R.id.edPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        toCreate = findViewById(R.id.toCreate);
+
+        toCreate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent(LoginActivity.this, CreateUserActivity.class));
 
 
+            }
+
+        });
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

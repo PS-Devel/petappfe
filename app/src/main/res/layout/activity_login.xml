@@ -90,15 +90,10 @@
             android:text="@string/login"
             android:textColor="@android:color/white" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_above="@id/swipeRight"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_arrow_right" />
+
 
         <TextView
-            android:id="@+id/swipeRight"
+            android:id="@+id/toCreate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

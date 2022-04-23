@@ -19,12 +19,19 @@
     <string name="login_form_username">Username</string>
     <string name="login_form_password">Password</string>
     <string name="login_form_login">LOGIN</string>
-    <string name="swipe_left_for_register">Scorri per accedere alla pagina di registrazione</string>
+    <string name="swipe_left_for_register">Clicka per accedere alla pagina di registrazione</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="e_mail">Email</string>
     <string name="tag">Inserisci username e password per accedere</string>
-    <string name="swipe_right_for_login">Scorri per accedere alla pagina di login</string>
-    <string name="register">Registrazione</string>
+    <string name="swipe_right_for_login">Clicka per accedere alla pagina di login</string>
+    <string name="register">Registrati</string>
     <string name="re_type_password">Ripeti Password</string>
+
+
+    <!-- BOTTM BAR ICON -->
+    <string name="icon_1">Cose 1</string>
+    <string name="icon_2">Cose 2</string>
+    <string name="icon_3">Cose 3</string>
+
 </resources>

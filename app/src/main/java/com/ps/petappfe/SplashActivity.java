@@ -14,10 +14,16 @@ public class SplashActivity extends AppCompatActivity {
 
 
     private  int SPLASH_DELAY = 3000;
+    // CURSORI
     private ImageView imageView;
     private ImageView imageView3;
     private ImageView imageView4;
+    private ImageView imageView5;
+
     private ImageView imageView6;
+    private ImageView imageView7;
+
+
 
 
 
@@ -40,14 +46,11 @@ public class SplashActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageView2);
         imageView3 = findViewById(R.id.imageView3);
-
-
         imageView4 = findViewById(R.id.imageView4);
+        imageView5 = findViewById(R.id.imageView5);
 
         imageView6 = findViewById(R.id.imageView6);
-
-
-
+        imageView7 = findViewById(R.id.imageView7);
 
 
     }
@@ -57,13 +60,12 @@ public class SplashActivity extends AppCompatActivity {
         Animation fadingAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         fadingAnimation.setDuration(SPLASH_DELAY);
         imageView.startAnimation(fadingAnimation);
-
         imageView3.startAnimation(fadingAnimation);
         imageView4.startAnimation(fadingAnimation);
+        imageView5.startAnimation(fadingAnimation);
+
         imageView6.startAnimation(fadingAnimation);
-
-
-
+        imageView7.startAnimation(fadingAnimation);
 
     }
 
