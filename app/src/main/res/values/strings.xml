@@ -3,15 +3,10 @@
     <string name="action_settings">Settings</string>
     <string name="login_text">Inserire username e password per accedere</string>
     <string name="redirect_create_text">Nuovo utente?</string>
-
-
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="signup_login_hint">Clicka qui per accedere</string>
     <string name="login_signup_hint">Clicka qui se non sei registrato</string>
-
-
-
     <string name="btn_l">Login</string>
     <string name="hello_blank_fragment">Hello</string>
     <string name="your_name">Username</string>
@@ -27,9 +22,7 @@
     <string name="swipe_right_for_login">Clicka per accedere alla pagina di login</string>
     <string name="register">Registrati</string>
     <string name="re_type_password">Ripeti Password</string>
-
-
-    <!-- BOTTM BAR ICON -->
+    <!-- BOTTOM BAR -->
     <string name="icon_1">Cose 1</string>
     <string name="icon_2">Cose 2</string>
     <string name="icon_3">Cose 3</string>

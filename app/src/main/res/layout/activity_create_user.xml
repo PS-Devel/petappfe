@@ -27,7 +27,6 @@
         android:textColor="@color/primaryTextColor"
         android:textSize="40sp" />
 
-
     <TextView
         android:id="@+id/tv_subtitle"
         android:layout_width="wrap_content"
@@ -112,7 +111,6 @@
             android:text="@string/register"
             android:textColor="@android:color/white" />
 
-
         <TextView
             android:id="@+id/toLogin"
             android:layout_width="wrap_content"
@@ -123,7 +121,6 @@
             android:fontFamily="@font/roboto_regular"
             android:text="@string/swipe_right_for_login"
             android:textSize="15sp" />
-
     </RelativeLayout>
 
 </LinearLayout>
