@@ -37,7 +37,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="50dp"
         android:fontFamily="@font/roboto_regular"
-        android:text="@string/tag"
+        android:text="@string/login_text"
         android:textAlignment="center"
         android:textSize="17sp" />
 
@@ -104,5 +104,8 @@
             android:textSize="15sp" />
 
     </RelativeLayout>
+
+
+
 
 </LinearLayout>

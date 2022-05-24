@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".DetailsActivity"></activity>
 
 
         <activity android:name=".DashboardActivity" />

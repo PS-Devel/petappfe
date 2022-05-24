@@ -1,55 +1,69 @@
 package com.ps.petappfe;
 
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
+import com.ps.petappfe.Model.Petsitter;
+import com.ps.petappfe.Model.PopularPetsitter;
+import com.ps.petappfe.Util.PetsitterAdapter;
+import com.ps.petappfe.Util.PopularPetsitterAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity {
-    TextView username;
-    ImageButton backB;
-    ImageButton logOutB;
-    ImageButton profileB;
-    ImageButton editProfileB;
-    CardView contributeCard;
-    CardView learnCard;
-    CardView interestsCard;
-    CardView helpCard;
-    CardView settingsCard;
-    CardView practiceCard;
 
-    CardView todoB;
-    BottomNavigationView bottomNavigationView;
+    RecyclerView popularRecycler, petsitterRecycler;
+    PopularPetsitterAdapter popularPetsitterAdapter;
+    PetsitterAdapter petsitterAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
-        username = findViewById(R.id.username);
+        setContentView(R.layout.activity_ps_dashboard);
 
-
-        //bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        //bottomNavigationView.setSelectedItemId(R.id.person);
-        Intent intent = getIntent();
-
-        if (intent.getExtras() != null) {
-            String passedUsername = intent.getStringExtra("data");
-            username.setText("Bentornato: " + passedUsername);
-
-        }
-        FirstFragment firstFragment = new FirstFragment();
-        SecondFragment secondFragment = new SecondFragment();
-        ThirdFragment thirdFragment = new ThirdFragment();
+        List<Petsitter> petsitterList = new ArrayList<>();
+        petsitterList.add(new Petsitter("Marco", "EUR 8", R.drawable.llustration, "4.5", "Cane"));
+        petsitterList.add(new Petsitter("Davide", "EUR 10", R.drawable.llustration, "4.2", "Gatto"));
+        petsitterList.add(new Petsitter("Luca", "EUR 8", R.drawable.llustration, "4.5", "Gatto"));
+        petsitterList.add(new Petsitter("Maria", "EUR 8", R.drawable.llustration, "4.2", "Gatto"));
+        petsitterList.add(new Petsitter("Stefano", "EUR 8", R.drawable.llustration, "4.5", "Cane"));
+        petsitterList.add(new Petsitter("Silvia", "EUR 5", R.drawable.llustration, "4.2", "Cane"));
+        petsitterList.add(new Petsitter("Maria", "EUR 8", R.drawable.llustration, "4.2", "Gatto"));
+        petsitterList.add(new Petsitter("Stefano", "EUR 8", R.drawable.llustration, "4.5", "Cane"));
+        petsitterList.add(new Petsitter("Silvia", "EUR 5", R.drawable.llustration, "4.2", "Cane"));
+        setAsiaRecycler(petsitterList);
 
     }
 
-}
+    private void setPopularRecycler(List<PopularPetsitter> popularPetsitterList) {
+
+        popularRecycler = findViewById(R.id.popular_recycler);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        popularRecycler.setLayoutManager(layoutManager);
+        popularPetsitterAdapter = new PopularPetsitterAdapter(this, popularPetsitterList);
+        popularRecycler.setAdapter(popularPetsitterAdapter);
+
+    }
+
+    private void setAsiaRecycler(List<Petsitter> petsitterList) {
+
+        petsitterRecycler = findViewById(R.id.petsitter_recycler);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        petsitterRecycler.setLayoutManager(layoutManager);
+        petsitterAdapter = new PetsitterAdapter(this, petsitterList);
+        petsitterRecycler.setAdapter(petsitterAdapter);
+
+    }
+
+        FirstFragment firstFragment = new FirstFragment();
+        SecondFragment secondFragment = new SecondFragment();
+        ThirdFragment thirdFragment = new ThirdFragment();
+    }
+
+
+
+
+
